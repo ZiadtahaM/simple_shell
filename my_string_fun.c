@@ -35,9 +35,9 @@ int my_strcmp(char *s1, char *s2)
 	s2++;
 	}
 	if (*s1 == *s2)
-        return (0);
-    else
-        return (*s1 < *s2 ? -1 : 1);
+	return (0);
+	else
+	return (*s1 < *s2 ? -1 : 1);
 }
 
 /**
@@ -49,10 +49,10 @@ int my_strcmp(char *s1, char *s2)
  */
 char *my_starts_with(const char *haystack, const char *needle)
 {
-    while (*needle)
-        if (*needle++ != *haystack++)
-            return (NULL);
-    return ((char *)haystack);
+	while (*needle)
+	if (*needle++ != *haystack++)
+	return (NULL);
+	return ((char *)haystack);
 }
 
 /**
@@ -64,13 +64,14 @@ char *my_starts_with(const char *haystack, const char *needle)
  */
 char *my_strcat(char *dest, char *src)
 {
-    char *ret = dest;
+	char *ret = dest;
 
-    while (*dest)
-        dest++;
-    while (*src)
-        *dest++ = *src++;
-    *dest = *src;
-    return (ret);
+	while (*dest)
+	dest++;
+	while (*src)
+
+	*dest++ = *src++;
+	*dest = *src;
+	return (ret);
 }
 

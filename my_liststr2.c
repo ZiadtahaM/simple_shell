@@ -12,8 +12,8 @@ size_t my_list_len(const list_t *my_h)
 
     while (my_h)
     {
-        my_h = my_h->next;
-        i++;
+	my_h = my_h->next;
+	i++;
     }
     return (i);
 }
@@ -32,23 +32,23 @@ char **my_list_to_strings(list_t *my_head)
     char *my_str;
 
     if (!my_head || !i)
-        return (NULL);
+	return (NULL);
     my_strs = malloc(sizeof(char *) * (i + 1));
     if (!my_strs)
-        return (NULL);
+	return (NULL);
     for (i = 0; my_node; my_node = my_node->next, i++)
     {
-        my_str = malloc(my_strlen(my_node->str) + 1);
-        if (!my_str)
-        {
-            for (j = 0; j < i; j++)
-                free(my_strs[j]);
-            free(my_strs);
-            return (NULL);
-        }
+	my_str = malloc(my_strlen(my_node->str) + 1);
+	if (!my_str)
+	{
+	for (j = 0; j < i; j++)
+	free(my_strs[j]);
+	free(my_strs);
+	return (NULL);
+	}
 
-        my_str = my_strcpy(my_str, my_node->str);
-        my_strs[i] = my_str;
+	my_str = my_strcpy(my_str, my_node->str);
+	my_strs[i] = my_str;
     }
     my_strs[i] = NULL;
     return (my_strs);
@@ -66,14 +66,14 @@ size_t my_print_list(const list_t *my_h)
 
     while (my_h)
     {
-        my_puts(my_convert_number(my_h->num, 10, 0));
-        my_putchar(':');
-        my_putchar(' ');
-        my_puts(my_h->str ? my_h->str : "(nil)");
-        my_puts("\n");
-        my_h = my_h->next;
-        i++;
-    }
+	my_puts(my_convert_number(my_h->num, 10, 0));
+	my_putchar(':');
+	my_putchar(' ');
+	my_puts(my_h->str ? my_h->str : "(nil)");
+	my_puts("\n");
+	my_h = my_h->next;
+	i++;
+	}
     return (i);
 }
 
@@ -91,10 +91,10 @@ list_t *my_node_starts_with(list_t *my_node, char *my_prefix, char my_c)
 
     while (my_node)
     {
-        my_p = my_starts_with(my_node->str, my_prefix);
-        if (my_p && ((my_c == -1) || (*my_p == my_c)))
-            return (my_node);
-        my_node = my_node->next;
+	my_p = my_starts_with(my_node->str, my_prefix);
+	if (my_p && ((my_c == -1) || (*my_p == my_c)))
+	return (my_node);
+	my_node = my_node->next;
     }
     return (NULL);
 }
@@ -112,10 +112,10 @@ ssize_t my_get_node_index(list_t *my_head, list_t *my_node)
 
     while (my_head)
     {
-        if (my_head == my_node)
-            return (i);
-        my_head = my_head->next;
-        i++;
+	if (my_head == my_node)
+	return (i);
+	my_head = my_head->next;
+	i++;
     }
     return (-1);
 }

@@ -10,9 +10,9 @@ int my_bfree(void **my_ptr)
 {
     if (my_ptr && *my_ptr)
     {
-        free(*my_ptr);
-        *my_ptr = NULL;
-        return (1);
+	free(*my_ptr);
+	*my_ptr = NULL;
+	return (1);
     }
     return (0);
 }
