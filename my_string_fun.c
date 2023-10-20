@@ -8,13 +8,13 @@
  */
 int my_strlen(char *s)
 {
-    int i = 0;
+	int i = 0;
 
-    if (!s)
-        return (0);
+ if (!s)
+	return (0);
 
     while (*s++)
-        i++;
+	i++;
     return (i);
 }
 
@@ -27,14 +27,14 @@ int my_strlen(char *s)
  */
 int my_strcmp(char *s1, char *s2)
 {
-    while (*s1 && *s2)
-    {
-        if (*s1 != *s2)
-            return (*s1 - *s2);
-        s1++;
-        s2++;
-    }
-    if (*s1 == *s2)
+	while (*s1 && *s2)
+	{
+	if (*s1 != *s2)
+	return (*s1 - *s2);
+	s1++;
+	s2++;
+	}
+	if (*s1 == *s2)
         return (0);
     else
         return (*s1 < *s2 ? -1 : 1);
